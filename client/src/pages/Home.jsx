@@ -42,14 +42,14 @@ const Home = () => {
                     </Link>
                 </section>
 
-                <section style={{ marginTop: "3rem", marginLeft: "5rem" }}>
+                <section style={{ marginTop: "3rem", marginLeft: "5rem", marginRight: "5rem" }}>
                     <h3>Recent Documents</h3>
                     <div className="table-container">
                         <table className="content-table">
                             <thead className="table-header">
                                 <tr>
                                     <th>Name</th>
-                                    <th>Date Modified</th>
+                                    <th align="right">Date Modified</th>
                                 </tr>
                             </thead>
 
@@ -65,7 +65,7 @@ const Home = () => {
                                                 </Link>
                                             </td>
 
-                                            <td>{file?.updatedAt?.substr(0, 10)}</td>
+                                            <td align="right">{file?.updatedAt?.substr(0, 10)}</td>
                                         </tr>
                                     ))
                                 }

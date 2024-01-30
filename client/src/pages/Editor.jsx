@@ -124,7 +124,7 @@ const Editor = ({ handleOpenEditor }) => {
                 saveDocument(quill.getContents());
             })
         }
-    }, [socket, quill, value])
+    }, [socket, quill])
 
     const handleChangeTitle = async (e) => {
         setTitle(e.target.value);
