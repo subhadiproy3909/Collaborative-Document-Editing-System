@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useState } from "react";
 import Editor from "./Editor";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, Outlet } from "react-router-dom";
 import { v4 as uuid } from "uuid";
 import axios from "axios";
 
@@ -56,12 +56,13 @@ const Home = () => {
                             <tbody className="table-body">
                                 {
                                     doc && doc.map(file => (
-                                        <tr>
+                                        <tr key={file.docId}>
                                             <td>
                                                 <Link
                                                     style={{ color: "#666666", textDecoration: "none" }} to={`/${file.docId}`}
                                                     state={{ title: file.title }}>
                                                     {file.title}
+                                                    {/* <Outlet /> */}
                                                 </Link>
                                             </td>
 

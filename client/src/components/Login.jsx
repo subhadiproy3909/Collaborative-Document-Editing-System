@@ -26,12 +26,14 @@ const Login = () => {
         e.preventDefault();
 
         const response = await loginApi(login.email ,login.password);
-        setUser(response);
+        localStorage.setItem("userdata", JSON.stringify(response));
+        localStorage.setItem("loginTime", new Date(Date.now()).getTime());
+        setUser({ username: response.username, email: response.email});
     }
 
     return (
         <>
-            {user && <Navigate to={`/`} replace></Navigate>}
+            {user && <Navigate to={`/`}  replace></Navigate>}
             <div className="form-wrapper">
                 <form className="form" onSubmit={(e) => {handleSubmit(e)}}>
                     <span style={{ fontSize: "30px" }}>Login</span>

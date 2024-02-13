@@ -8,9 +8,10 @@ const context = createContext();
 const Provider = ({children}) => {
     const [user, setUser] = useState(null);
     const [doc, setDoc] = useState(null);
+    const [checkUser, setCheckUser] = useState(false);
 
     return (
-        <context.Provider value={{user, setUser, doc, setDoc}}>
+        <context.Provider value={{user, setUser, doc, setDoc, checkUser, setCheckUser}}>
             {children}
         </context.Provider>
     );

@@ -52,6 +52,7 @@ const Editor = ({ handleOpenEditor }) => {
     useEffect(() => {
         const socketServer = io("http://localhost:5005");
         setSocket(socketServer);
+        console.log("socket");
 
         return () => {
             socketServer.disconnect();

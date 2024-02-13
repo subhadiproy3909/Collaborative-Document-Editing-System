@@ -7,7 +7,7 @@ import {EditorState} from '../context/ContextProvider';
 const Protected = ({ children }) => {
     const {user, setUser} = EditorState();
 
-    if(user === null){
+    if(!user){
         return <Navigate to={'/login'} replace />
     }
 

@@ -47,6 +47,7 @@ const login = async (req, res) => {
         return res.json({
             username: user.username,
             email: user.email,
+            token: token,
         })
     }
     catch(error){
@@ -65,6 +66,7 @@ const checkAuth = async (req, res) => {
                 return res.json({
                     username: user.username,
                     email: user.email,
+                    token: req.cookies['token'],
                 })
             }
         }
